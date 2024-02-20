@@ -1,0 +1,24 @@
+{
+	"manifest_version": 3,
+	"name": "Çok gizli eklenti",
+	"version": "1.0",
+	"description": "Bu eklenti gerçekten çok gizli!",
+	"icons": {
+		"48": "images/icons/icon.png"
+	},
+	"permissions": ["activeTab", "storage", "scripting"],
+	"action": {
+		"default_popup": "popup.html",
+		"default_icon": "images/icons/icon.png"
+	},
+	"background": {
+		"service_worker": "background.js"
+	},
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["content.js"]
+		}
+	],
+	"host_permissions": ["https://*/*"]
+}
